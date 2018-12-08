@@ -1,2 +1,4 @@
-<input type = "text" placeholder = "請輸入代辦事項">
-<button>增加</button>
+<!-- ngModel 的一個坑 要使用ngModel 雙向綁定 需要在app.module.ts import FormsModule -->
+<input type = "text"  [(ngModel)] = "todoText" [placeholder] = "placeholderText">
+<button (click) = "addTodo($event)">增加</button>
+
