@@ -25,4 +25,19 @@ export class AppComponent {
       done: false
     }
   ];
+
+  addTodo(text) {
+    this.todoItems.push({
+      id: (new Date()).getTime(),
+      value: text,
+      done: false
+    });
+  }
+
+  deleteItem(item: TodoItem) {
+    console.log(item);
+    this.todoItems = this.todoItems.filter(todoitem => todoitem.id !== item.id);
+    console.log(this.todoItems);
+  }
 }
+
